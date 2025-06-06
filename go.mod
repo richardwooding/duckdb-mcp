@@ -4,6 +4,7 @@ go 1.24.3
 
 require (
 	github.com/alecthomas/kong v1.11.0
+	github.com/marcboeker/go-duckdb/v2 v2.3.1
 	github.com/mark3labs/mcp-go v0.31.0
 )
 
@@ -23,7 +24,6 @@ require (
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
 	github.com/marcboeker/go-duckdb/arrowmapping v0.0.8 // indirect
 	github.com/marcboeker/go-duckdb/mapping v0.0.9 // indirect
-	github.com/marcboeker/go-duckdb/v2 v2.3.1 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
 	github.com/yosida95/uritemplate/v3 v3.0.2 // indirect
