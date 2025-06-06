@@ -2,7 +2,9 @@ package cmd
 
 import (
 	"errors"
+	"github.com/richardwooding/duckdb-mcp/duckdbmanager"
 	"github.com/richardwooding/duckdb-mcp/model"
+	"github.com/richardwooding/duckdb-mcp/server"
 )
 
 var NoDatasourceForInMemory = errors.New("cannot specify a datasource when using in-memory database")
@@ -23,5 +25,21 @@ func (c *RunCmd) Run(g *model.Globals) error {
 		return NoDatasourceForInMemory
 	}
 
-	return nil
+	manager, shutdown, err := duckdbmanager.NewDuckdbManager(duckdbmanager.Config{Datasource: c.Datasource})
+	defer shutdown()
+	if err != nil {
+		return err
+	}
+
+	srv, err := server.NewServer(server.Config{
+		Transport: transport,
+		Executor:  manager,
+		Querier:   manager,
+	})
+
+	if err != nil {
+		return err
+	}
+
+	return srv.Run()
 }

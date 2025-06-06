@@ -108,7 +108,15 @@ func (s *Server) Run() error {
 		return mcp.NewToolResultText(string(data)), nil
 	})
 
-	return nil
+	switch s.transport {
+	case model.StdioTransport:
+		return server.ServeStdio(srv)
+	case model.HttpWithSSETransport:
+		httpServer := server.NewStreamableHTTPServer(srv)
+		return httpServer.Start(":8080")
+	default:
+		return errors.New("unsupported transport")
+	}
 }
 
 type execResult struct {

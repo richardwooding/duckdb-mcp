@@ -3,6 +3,7 @@ package duckdbmanager
 import (
 	"context"
 	"database/sql"
+	_ "github.com/marcboeker/go-duckdb"
 )
 
 type Config struct {
