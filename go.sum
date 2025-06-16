@@ -56,8 +56,8 @@ github.com/marcboeker/go-duckdb/mapping v0.0.9 h1:c5z8PCAgLFuhqjML1ljQq+MFNA1jvX
 github.com/marcboeker/go-duckdb/mapping v0.0.9/go.mod h1:d4zwkzYK3ruLKqVKAIfrZM8pJw2rMrSRAt8fFKZhx7k=
 github.com/marcboeker/go-duckdb/v2 v2.3.1 h1:+vzDUfpyf0xJwlYxB/KYCCTV3WswmbKtO0O5njfrIWQ=
 github.com/marcboeker/go-duckdb/v2 v2.3.1/go.mod h1:cz7TuiXkRXt/sit0XnthgFzMgmNips5wUPQQsgTPzco=
-github.com/mark3labs/mcp-go v0.31.0 h1:4UxSV8aM770OPmTvaVe/b1rA2oZAjBMhGBfUgOGut+4=
-github.com/mark3labs/mcp-go v0.31.0/go.mod h1:rXqOudj/djTORU/ThxYx8fqEVj/5pvTuuebQ2RC7uk4=
+github.com/mark3labs/mcp-go v0.32.0 h1:fgwmbfL2gbd67obg57OfV2Dnrhs1HtSdlY/i5fn7MU8=
+github.com/mark3labs/mcp-go v0.32.0/go.mod h1:rXqOudj/djTORU/ThxYx8fqEVj/5pvTuuebQ2RC7uk4=
 github.com/minio/asm2plan9s v0.0.0-20200509001527-cdd76441f9d8 h1:AMFGa4R4MiIpspGNG7Z948v4n35fFGB3RR3G/ry4FWs=
 github.com/minio/asm2plan9s v0.0.0-20200509001527-cdd76441f9d8/go.mod h1:mC1jAcsrzbxHt8iiaC+zU4b1ylILSosueou12R++wfY=
 github.com/minio/c2goasm v0.0.0-20190812172519-36a3d3bbc4f3 h1:+n/aFZefKZp7spd8DFdX7uMikMLXX4oubIzJF4kv/wI=
