@@ -3,7 +3,7 @@ module github.com/richardwooding/duckdb-mcp
 go 1.24.3
 
 require (
-	github.com/alecthomas/kong v1.11.0
+	github.com/alecthomas/kong v1.12.0
 	github.com/marcboeker/go-duckdb/v2 v2.3.1
 	github.com/mark3labs/mcp-go v0.31.0
 )
