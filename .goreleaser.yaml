@@ -31,16 +31,14 @@ builds:
       - -trimpath
     env:
       - CGO_ENABLED=1
+      # The duckdb-go-bindings static libraries are built with GCC against
+      # glibc/libstdc++, so they must be linked with a GCC toolchain (zig's
+      # libc++ and musl cannot resolve their symbols): native gcc for amd64,
+      # the aarch64-linux-gnu cross toolchain for arm64.
       - >-
-        {{- if eq .Os "linux" }}
-          {{- if eq .Arch "amd64" }}CC=zig c -target x86_64-linux-musl{{- end }}
-          {{- if eq .Arch "arm64"}}CC=zig c -target aarch64-linux-musl{{- end }}
-        {{- end }}
+        {{- if eq .Arch "arm64" }}CC=aarch64-linux-gnu-gcc{{- else }}CC=gcc{{- end }}
       - >-
-        {{- if eq .Os "linux" }}
-          {{- if eq .Arch "amd64" }}CC=zig c++ -target x86_64-linux-musl{{- end }}
-          {{- if eq .Arch "arm64"}}CC=zig c++ -target aarch64-linux-musl{{- end }}
-        {{- end }}
+        {{- if eq .Arch "arm64" }}CXX=aarch64-linux-gnu-g++{{- else }}CXX=g++{{- end }}
 archives:
   - format: tar.gz
     # this name template makes the OS and Arch compatible with the results of `uname`.
