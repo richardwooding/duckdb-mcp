@@ -13,9 +13,7 @@ type CLI struct {
 
 func main() {
 	cli := CLI{
-		Globals: model.Globals{
-			Version: model.VersionFlag("0.1.0"),
-		},
+		Version: model.VersionFlag("0.1.0"),
 	}
 	ctx := kong.Parse(&cli,
 		kong.Name("duckdb-mcp"),

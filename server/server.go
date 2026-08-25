@@ -147,7 +147,7 @@ func rowsToJSON(rows *sql.Rows) ([]map[string]any, error) {
 
 	values := make([]any, len(columns))
 	for i := range values {
-		values[i] = new(interface{})
+		values[i] = new(any)
 	}
 
 	var results []map[string]any
